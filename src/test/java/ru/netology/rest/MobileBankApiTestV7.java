@@ -3,9 +3,9 @@ package ru.netology.rest;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 
+
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 
 
 
@@ -18,11 +18,9 @@ class MobileBankApiTestV7 {
                 .get("/demo/accounts")
                 .then()
                 .statusCode(200)
-//                .contentType(ContentType.JSON)
                 .contentType(ContentType.JSON)
                 .body("[0].id",equalTo(1))
                 .body("[1].id", equalTo(2))
-                .body("[2].id", equalTo(3));
-//                .body(matchesJsonSchemaInClasspath("accounts.schema.json"));
+                .body("[2].id", equalTo(2));
     }
 }
