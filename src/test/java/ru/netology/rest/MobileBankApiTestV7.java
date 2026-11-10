@@ -21,6 +21,6 @@ class MobileBankApiTestV7 {
                 .contentType(ContentType.JSON)
                 .body("[0].id",equalTo(1))
                 .body("[1].id", equalTo(2))
-                .body("[2].id", equalTo(2));
+                .body("[2].id", equalTo(3));
     }
 }
